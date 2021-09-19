@@ -246,90 +246,7 @@
 
     </script>
 
-<!--        //获取支付码-->
-<!--        function getreqestbarcode() {-->
-<!--            //$.myloading({ title: '数据加载中' });-->
-<!--            AsynPost(AjaxHandlerUrl + 'ThirdWeb/GetBarCode', { acctype: acctype }, function (result) {-->
-<!--                if (result.IsSucceed) {-->
-<!--                    $.each(result.Obj, function (i, k) {-->
-<!--                        $("#qrcode" + i).text(k);-->
-<!--                    });-->
-<!--                    createqrcode();-->
-<!--                    $.myloading("hide");-->
-<!--                }-->
-<!--                else {-->
-<!--                    $.messager.alert("提示", result.Msg, "warning", function () { });-->
-<!--                }-->
-<!--            });-->
-<!--            $.myloading("hide");-->
-<!--        }-->
-<!--        //timer处理函数-->
-<!--        function SetRemainTime() {-->
-<!--            if (curCount == 0) {-->
-<!--                getreqestbarcode();-->
-<!--            }-->
-<!--            else {-->
-<!--                curCount&#45;&#45;;-->
-<!--            }-->
-<!--        }-->
 
-<!--        function msgSend(temp) {-->
-<!--            try {-->
-<!--                var ws = null;-->
-
-<!--                if ("WebSocket" in window) {-->
-<!--                    ws = new WebSocket(fullUrl);-->
-
-<!--                } else if ("MozWebSocket" in window) {-->
-<!--                    ws = new MozWebSocket(fullUrl);-->
-
-<!--                } else {-->
-<!--                    return false;-->
-<!--                }-->
-
-<!--                if (ws != null) {-->
-<!--                    ws.onopen = function () { };-->
-<!--                    ws.onclose = function () { };-->
-<!--                    ws.onerror = function (event) { };-->
-<!--                    ws.onmessage = function (msg) {-->
-<!--                        $("#txtvalue").val(msg.data);-->
-<!--                        $("#form1").submit();-->
-<!--                    };-->
-<!--                    delayExcute(temp, ws);-->
-<!--                }-->
-<!--            } catch (e) {-->
-<!--                //alert(e);-->
-<!--            }-->
-
-<!--        }-->
-
-<!--        /*-->
-<!--         *html发送二维码给服务端进行监听-->
-<!--         */-->
-<!--        function delayExcute(temp, ws) {-->
-<!--            if (ws != null) {-->
-<!--                window.setTimeout(function () {-->
-<!--                    ws.send("(" + temp + ")");-->
-<!--                }, 500);-->
-
-<!--            }-->
-<!--        }-->
-<!--        setInterval(function () {-->
-<!--            GetDate(false);-->
-<!--        }, 1000);-->
-
-<!--        function GetDate(flag) {-->
-<!--            AjaxGet(AjaxHandlerUrl + 'ThirdWeb/GetServerDate', null, function (result) {-->
-<!--                $("#monthDay").html(result.monthDay);-->
-<!--                $("#second").html(result.second);-->
-<!--                $("#hourMinute").html(result.hourMinute);-->
-<!--                if (flag) {-->
-<!--                    $("#marqueeStr").html(result.marqueeStr);-->
-<!--                }-->
-<!--            });-->
-<!--        }-->
-
-<!--    </script>-->
 </head>
 <script>
     var myVar2 = setInterval(function(){ getMonthAndDay() }, 1000);
@@ -354,7 +271,7 @@
     }
     function getMonthAndDay() {//获取当前时间
         var date = new Date();
-        var month = date.getMonth() + 1;
+        var month = date.getMonth() + 1<10? "0"+(date.getMonth() + 1):date.getMonth() + 1;
         var strDate = date.getDate();
         var currentdate = month  + "月" + strDate +"日";
         //return currentdate;
@@ -362,7 +279,7 @@
     }
 </script>
 <body class="sweep_bg">
-
+<audio  src="/com.zfu/audio/1.mp3" autoplay="autoplay" ></audio>
 <div style="font-size: 20px;color: white;position: relative;width: 86%;margin: 20px auto 0 auto;">
     <img src="com.zfu/images/FZU.png" style="width: 99px; float: right; position: absolute;  right: 0px; top: -17px;">
     <span style="display: block;padding-bottom: 20px;">姓名：陈栎</span>
