@@ -5,22 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>福州大学一码通</title>
-<!--    <link rel="stylesheet" href="/themes/paymobile/bootstrap.min.css"><link rel="stylesheet" href="/themes/paymobile/style4.css?id=1">-->
 
-<!--    <script type="text/javascript" src="/scripts/jquery-3.3.1.min.js?id=1.0.0.2"></script><style id="__WXWORK_INNER_SCROLLBAR_CSS">::-webkit-scrollbar { width: 12px !important; height: 12px !important; }::-webkit-scrollbar-track:vertical {  }::-webkit-scrollbar-thumb:vertical { background-color: rgba(136, 141, 152, 0.5) !important; border-radius: 10px !important; background-clip: content-box !important; border:2px solid transparent !important; } ::-webkit-scrollbar-track:horizontal {  }::-webkit-scrollbar-thumb:horizontal { background-color: rgba(136, 141, 152, 0.5) !important; border-radius: 10px !important; background-clip: content-box !important; border:2px solid transparent !important; } ::-webkit-resizer { display: none !important; }</style>-->
-
-<!--    <script type="text/javascript" src="/scripts/plugins/jquery.easyui.min.js?id=1.0.0.2"></script>-->
-
-<!--    <script type="text/javascript" src="/scripts/lang/easyui-lang-zh_CN.js?id=1.0.0.2"></script>-->
-<!--    <script src="/Scripts/chinesealert.js?id=1.0.0.2" type="text/javascript"></script>-->
-
-<!--    <script src="/Scripts/common/common.js?id=1.0.0.2" type="text/javascript"></script>-->
-<!--    <script src="/Scripts/Jquery.MaskLayer.js?id=1.0.0.2" type="text/javascript"></script>-->
-<!--    <script src="/Scripts/jquery-powerFloat-min.js?id=1.0.0.2" type="text/javascript"></script>-->
-<!--    <script src="/Scripts/jquery.qrcode.min.js?id=1.0.0.2" type="text/javascript"></script>-->
-<!--    &lt;!&ndash;[if lt ie 9]>-->
-<!--    <script type="text/javascript" src="/scripts/plugins/html5.min.js"></script>-->
-<!--    <![endif]&ndash;&gt;-->
 
     <style type="text/css">
 
@@ -83,142 +68,7 @@
 
 
     </style>
-    <!--点击选择支付方式-->
-<!--    <script type="text/javascript">-->
-<!--        var jkm = '#C0C0C0';-->
-<!--        var reason=''-->
-<!--        var acctype = "";//支付方式类型-->
-<!--        var InterValObj; //timer变量，控制时间-->
-<!--        var curCount = 60; //当前剩余秒数-->
-<!--        var fullUrl = 'ws://ykt.fzu.edu.cn:2016';//监听地址-->
-<!--        var myScroll;-->
-<!--        //选择支付方式-->
-<!--        $(function () {-->
-<!--            var push1 = [];-->
-<!--            $.each(jQuery(".payment-box").find("dl"), function (m, n) {-->
-<!--                var model = {};-->
-<!--                model.text = $(this).find('.title').html();-->
-<!--                model.src = $(this).find("img").attr("src");-->
-<!--                model.value = jQuery(n).attr("tag");-->
-<!--                model.desc = $(this).find('.dec').html();-->
-<!--                push1.push(model);-->
-<!--            });-->
-<!--            if (push1.length == 1) {-->
-<!--                document.getElementById("showUserPicker").innerHTML = "";-->
-<!--            }-->
-<!--            if (push1.length >= 1) {-->
-<!--                acctype = push1[0].value;-->
-<!--                // $('#payWay').html('<img src="' + push1[0].src + '"/><span>' + push1[0].text + acctype + '</span');-->
-<!--                $('#payWay').html('<img src="' +-->
-<!--                    push1[0].src +-->
-<!--                    '"/><div style="text-align: left; font-size:13px;"><div style="font-weight: 600;">' +-->
-<!--                    push1[0].text +-->
-<!--                    '</div><div>' +-->
-<!--                    push1[0].desc +-->
-<!--                    '</div></div>');-->
-
-<!--            }-->
-<!--            $('.payment-box').find('em').first().removeClass('icon-uncheckbox').addClass('icon-checkbox');-->
-<!--            $('#changeWay').click(function () {-->
-<!--                $('#paymethodshow').show();-->
-<!--                $('.shadeBg').show();-->
-<!--            });-->
-<!--            $('.payment-box').find('dl').click(function () {-->
-<!--                acctype = $(this).attr('tag');-->
-<!--                $('.payment-box').children('dl').find('dd').children('em').removeClass('icon-checkbox').addClass('icon-uncheckbox');-->
-<!--                $(this).children('dd').find('em').removeClass('icon-uncheckbox').addClass('icon-checkbox');-->
-<!--                //$('#payWay').html('<img src="' + $(this).find("img").attr("src") + '"/><span>' + $(this).find('.title').html() + '</span>');-->
-<!--                $('#payWay').html('<img src="' +-->
-<!--                    $(this).find("img").attr("src") +-->
-<!--                    '"/><div style="text-align: left; font-size:13px;"><div style="font-weight: 600;">' +-->
-<!--                    $(this).find('.title').html() +-->
-<!--                    '</div><div>' +-->
-<!--                    $(this).find('.dec').html() +-->
-<!--                    '</div></div>');-->
-<!--                $('#paymethodshow').hide();-->
-<!--                $('.shadeBg').hide();-->
-<!--                getreqestbarcode();-->
-<!--            });-->
-<!--            $('.shadeBg').click(function () {-->
-<!--                $('#paymethodshow').hide();-->
-<!--                $('.shadeBg').hide();-->
-<!--            });-->
-<!--            $('#more').click(function () {-->
-<!--                $('#paymethodshow').show();-->
-<!--            });-->
-<!--            $("#qrCodeIco").css("margin", ($("#code").height() - $("#qrCodeIco").height()) / 2);//控制Logo图标的位置-->
-<!--            //点击查看一维码-->
-<!--            $('.tx').click(function () {-->
-<!--                $('#oneCode').show();-->
-<!--                $('#tips').show();-->
-<!--            });-->
-<!--            $('#oneCode').click(function () {-->
-<!--                $(this).hide();-->
-<!--            });-->
-<!--            //关闭提示-->
-<!--            $('.btn_box').click(function () {-->
-<!--                $('#tips').toggle();-->
-<!--                return false;-->
-<!--            });-->
-<!--            //判断横屏和竖屏-->
-<!--            var width = document.documentElement.clientWidth;-->
-<!--            var height = document.documentElement.clientHeight;-->
-<!--            if (width < height) {-->
-<!--                //console.log(width + " " + height);-->
-<!--                $print = $('#oneCode');-->
-<!--                $print.width(height);-->
-<!--                $print.height(width);-->
-<!--                $print.css('top', (height - width) / 2);-->
-<!--                $print.css('left', 0 - (height - width) / 2);-->
-<!--                $print.css('transform', 'rotate(90deg)');-->
-<!--                $print.css('transform-origin', '50% 50%');-->
-<!--            }-->
-<!--            //福大健康码防伪获取服务器时间-->
-<!--            GetDate(true);-->
-<!--        });-->
-
-<!--        $(function () {-->
-<!--            createqrcode();-->
-<!--            $('#codew').click(function () {-->
-<!--                getreqestbarcode();-->
-<!--            });-->
-
-
-<!--        });-->
-<!--        function createqrcode() {-->
-<!--            curCount = 60;-->
-<!--            window.clearInterval(InterValObj); //停止计时器-->
-<!--            InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次-->
-<!--            var qrcode = $("#qrcode0").text();-->
-<!--            msgSend(qrcode);-->
-<!--            var qrkcode = "";-->
-<!--            var j = 0;-->
-<!--            for (var i = 1; i <= qrcode.length; i++) {-->
-<!--                if (i % 4 == 0) {-->
-<!--                    qrkcode += qrcode.substr(j * 4, 4) + " ";-->
-<!--                    j++;-->
-<!--                }-->
-<!--            }-->
-<!--            var options = {-->
-<!--                width: 2,//较细处条形码的宽度-->
-<!--                height: 70, //条形码的宽度，无高度直接设置项，由位数决定，可以通过CSS去调整，见下-->
-<!--                //quite: 10,-->
-<!--                format: "CODE128",-->
-<!--                displayValue: false,//是否在条形码下方显示文字-->
-<!--                margin: 2-->
-<!--            };-->
-<!--            //JsBarcode(barcode, str, options);//原生-->
-<!--            // $('#barcode').JsBarcode(qrcode, options);//jQuery-->
-<!--            if (qrcode != "" && qrcode.length == 20) {-->
-<!--                qrkcode = qrcode.substr(0, 4) + "************ 查看数字";//数字隐藏-->
-<!--            }-->
-<!--            JsBarcode("#barcode", qrcode, options);-->
-<!--            JsBarcode("#barcode1", qrcode, options);-->
-<!--            $("#dvtext").text(qrcode);-->
-<!--            $("#dvtext1").text(qrkcode);-->
-<!--            if (jkm=='') {-->
-<!--                jkm = "#000000";-->
-<!--            }-->
+   
 
 
     <script>
@@ -282,13 +132,17 @@
 
 <div style="font-size: 20px;color: white;position: relative;width: 86%;margin: 20px auto 0 auto;">
     <img src="com.zfu/images/FZU.png" style="width: 99px; float: right; position: absolute;  right: 0px; top: -17px;">
-    <span style="display: block;padding-bottom: 20px;">姓名：闫冰雁</span>
+    <span style="display: block;padding-bottom: 20px;" >
+         
+         <a href="#loxi" style="text-decoration:none;color:white">姓名：闫冰雁</a>
+   
+</span>
     <span style="display: block;">部门：化学学院</span>
 </div>
 <div class="pay-container">
 
     <div class="tx">
-        <img id="barcode1" src="data:image/png;base64,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">
+        <img id="barcode1" src="data:image/png;base64,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" style="width: 280px; height: 76px">
 
 
         <div id="currentTime" class="jkmColor" style="font-size: large; margin: 10 px;height: 27 px ;color: #1d953f;">
@@ -302,6 +156,8 @@
 
 
         <div class="qr_code" style="width: 125px; height: 125px;" id="code">
+
+
             <table style="border: 0px; border-collapse: collapse; width: 125px; height: 125px; background-color: rgb(255, 255, 255);">
                 <tr>
                     <td style="background-color: #000000;"></td>
@@ -359,39 +215,11 @@
 
 </div>
 
-<!--选择支付方式-->
-<!--<div id="paymethodshow" class="popup">-->
-<!--    <div class="caption-head border font-size-20 flex-box">-->
-<!--        <button onclick="$('#paymethodshow').hide();$('.shadeBg').hide();" class="btn01">-->
-<!--            <em class="icon-close font-size-24">×</em>-->
-<!--        </button>-->
-<!--        <div class="fit text-center">选择支付方式</div>-->
-<!--    </div>-->
-<!--    <div class="profile-box">-->
-<!--        <div class="liushui-list payment-box">-->
 
-
-<!--            <dl tag="###">-->
-<!--                <dt><img alt="" src="/phonepaymentimages/card1.jpg"></dt>-->
-<!--                <dd class="f">-->
-<!--                    <div class="title">一卡通</div>-->
-<!--                    <div class="dec">适用所有场景</div>-->
-<!--                </dd>-->
-<!--                <dd><em class="icon-checkbox"></em></dd>-->
-<!--            </dl>-->
-
-
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
 <div class="shadeBg">
 </div>
 
-<!--<div style="text-align:center;position: absolute;bottom: .2rem;width: 100%;">-->
-<!--    <div id="ccTips" style="margin-bottom: 100px;">-->
-<!--        暂不支持此服务-->
-<!--    </div>-->
-<!--</div>-->
+
 
 <form action="/ThirdWeb/OrderResult" id="form1" method="POST">
     <input type="hidden" name="txtvalue" id="txtvalue">
@@ -445,5 +273,6 @@
 
     <embed height="50" width="100" src="com.zfu/audio/1.mp3">
 </audio>
+<img src="com.zfu/images/loxi.jpg" id="loxi" name="loxi" alt="lalala" style="width:400px; height: auto; border-radius:100px">
 </body>
 </html>
